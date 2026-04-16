@@ -6,11 +6,11 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:41:54 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/15 15:49:02 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:45:23 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_print(int c)
+int	ft_isprint(int c)
 {
 	if (c < 32 || c > 126)
 		return (0);

@@ -6,24 +6,26 @@
 #    By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/15 14:44:59 by ecakiray          #+#    #+#              #
-#    Updated: 2026/04/15 20:29:33 by ecakiray         ###   ########.fr        #
+#    Updated: 2026/04/16 19:23:31 by ecakiray         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-SRCS = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c ft_strlen.c
+CC = cc
+SRCS = ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c \
+		ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strnstr.c \
+		ft_bzero.c ft_toupper.c ft_tolower.c  ft_atoi.c\
 HDRS = libft.h
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Werror -Wextra
 ARFL = ar -rcs
 NAME = libft.a
-
+LIBFT = -L. -lft
 TEST = test.out
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(ARFLGS) $(NAME) $(OBJS)
+	$(ARFL) $(NAME) $(OBJS)
 
 $(OBJS): $(HDRS)
 
@@ -38,9 +40,9 @@ fclean: clean
 
 re: fclean all
 
-test: $(SRCS) test.c
-	$(CC) $(CFLAGS) $(SRCS) test.c -o $(TEST)
+test: $(NAME) test.c
+	$(CC) $(CFLAGS) test.c $(LIBFT)  -o $(TEST)
 
-tclean:
+tclean: fclean
 	rm -f $(TEST)
 	

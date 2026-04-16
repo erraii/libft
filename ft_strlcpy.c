@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 14:37:32 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 17:45:25 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/16 14:06:34 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/16 17:45:18 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include <stddef.h>
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (!(('0' <= c) && (c <= '9')))
-		return (0);
-	return (1);
+	size_t	src_len;
+	size_t	i;
+
+	src_len = 0;
+	while (*(src + src_len))
+		src_len++;
+	i = 0;
+	while (*(src + i) && (i < (size - 1)))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (src_len);
 }

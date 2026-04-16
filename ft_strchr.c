@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 14:37:32 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 17:45:25 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/16 15:54:22 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/16 17:45:22 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (!(('0' <= c) && (c <= '9')))
-		return (0);
-	return (1);
+	while (s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	return (0);
 }
