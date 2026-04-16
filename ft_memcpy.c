@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 16:28:16 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 20:56:07 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/16 20:31:35 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/16 21:11:20 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*memcpy(void *restrict s1, const void *restrict s2, size_t n)
 {
-	size_t	str_len;
+	size_t	src_len;
+	char	*dst;
+	char	*src;
 
-	str_len = 0;
-	while (*(s1 + str_len) && *(s2 + str_len)
-		&& ((*(s1 + str_len) - *(s2 + str_len)) == 0) && (str_len < n))
-		str_len++;
-	if ((*(s1 + str_len) == *(s2 + str_len))
-		|| (n == 0) || str_len == n)
-		return (0);
-	else
-		return (*(s1 + str_len) - *(s2 + str_len));
+	src_len = 0;
+	dst = (char *)s1;
+	src = (char *)s2;
+	while (*(src + src_len))
+	{
+		*(dst + src_len) = *(src + src_len);
+		src_len++;
+	}
+	return (s1);
 }

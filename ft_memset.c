@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 16:28:16 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 20:56:07 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/16 20:10:34 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/16 20:31:15 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	str_len;
+	char	*p;
 
-	str_len = 0;
-	while (*(s1 + str_len) && *(s2 + str_len)
-		&& ((*(s1 + str_len) - *(s2 + str_len)) == 0) && (str_len < n))
-		str_len++;
-	if ((*(s1 + str_len) == *(s2 + str_len))
-		|| (n == 0) || str_len == n)
-		return (0);
-	else
-		return (*(s1 + str_len) - *(s2 + str_len));
+	p = (char *)s;
+	while (n-- > 0)
+		*p++ = c;
+	return (s);
 }

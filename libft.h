@@ -6,7 +6,7 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 12:15:32 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 19:26:40 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/16 20:33:15 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	ft_bzero(void *s, size_t n);
 int		ft_tolower(int c);
 int		ft_tolower(int c);
 int		ft_atoi(const char *nptr);
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif
