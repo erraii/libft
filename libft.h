@@ -6,7 +6,7 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 12:15:32 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 20:33:15 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/17 10:23:43 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int		ft_tolower(int c);
 int		ft_tolower(int c);
 int		ft_atoi(const char *nptr);
 void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memcpy(void *restrict s1, const void *restrict s2, size_t n);
 
 #endif

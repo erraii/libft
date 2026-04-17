@@ -6,7 +6,7 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:28:16 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 20:56:07 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:56:34 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		|| (n == 0) || str_len == n)
 		return (0);
 	else
-		return (*(s1 + str_len) - *(s2 + str_len));
+		return ((unsigned char)*(s1 + str_len) - (unsigned char)*(s2 + str_len));
 }

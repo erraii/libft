@@ -6,17 +6,19 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 15:54:22 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 17:45:22 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/17 10:47:00 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (s)
+	while (*s != '\0')
 	{
-		if (*s == (char)c)
+		if (*s == c)
 			return ((char *)s);
 		s++;
 	}
+	if (c == '\0')
+		return ((char *)s);
 	return (0);
 }

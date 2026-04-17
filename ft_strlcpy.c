@@ -6,7 +6,7 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 14:06:34 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 17:45:18 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:19:39 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	src_len = 0;
 	while (*(src + src_len))
 		src_len++;
+	if (size == 0)
+		return (src_len);
 	i = 0;
 	while (*(src + i) && (i < (size - 1)))
 	{

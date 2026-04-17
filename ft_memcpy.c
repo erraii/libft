@@ -6,25 +6,27 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 20:31:35 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/16 21:11:20 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:36:30 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*memcpy(void *restrict s1, const void *restrict s2, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	src_len;
-	char	*dst;
-	char	*src;
+	char	*d;
+	char	*s;
 
 	src_len = 0;
-	dst = (char *)s1;
-	src = (char *)s2;
-	while (*(src + src_len))
+	d = (char *)dest;
+	s = (char *)src;
+	if (!d && !s)
+		return (0);
+	while (*(s + src_len) && (src_len < n))
 	{
-		*(dst + src_len) = *(src + src_len);
+		*(d + src_len) = *(s + src_len);
 		src_len++;
 	}
-	return (s1);
+	return (d);
 }

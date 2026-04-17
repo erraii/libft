@@ -6,7 +6,7 @@
 #    By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/15 14:44:59 by ecakiray          #+#    #+#              #
-#    Updated: 2026/04/16 20:32:08 by ecakiray         ###   ########.fr        #
+#    Updated: 2026/04/17 09:33:43 by ecakiray         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,4 +46,8 @@ test: $(NAME) test.c
 
 tclean: fclean
 	rm -f $(TEST)
+
+so:
+	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 	
