@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 16:28:16 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/19 18:32:37 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/22 18:44:01 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/22 21:45:18 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	str_len;
+	t_list	*current;
 
-	str_len = 0;
-	while (*(s1 + str_len) && *(s2 + str_len) && ((*(s1 + str_len) - *(s2
-					+ str_len)) == 0) && (str_len < (n - 1)))
-		str_len++;
-	if ((*(s1 + str_len) == *(s2 + str_len)) || (n == 0) || str_len == n)
-		return (0);
+	if (*lst)
+	{
+		current = *lst;
+		while (current)
+		{
+			if (!(current->next))
+			{
+				current->next = new;
+				new->next = 0;
+			}
+			current = current->next;
+		}
+	}
 	else
-		return ((unsigned char)*(s1 + str_len)
-			- (unsigned char)*(s2 + str_len));
+		*lst = new;
 }

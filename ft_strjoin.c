@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 16:28:16 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/19 18:32:37 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/21 12:24:41 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/21 19:22:28 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	str_len;
+	char	*sjoin;
+	size_t	sjoin_len;
 
-	str_len = 0;
-	while (*(s1 + str_len) && *(s2 + str_len) && ((*(s1 + str_len) - *(s2
-					+ str_len)) == 0) && (str_len < (n - 1)))
-		str_len++;
-	if ((*(s1 + str_len) == *(s2 + str_len)) || (n == 0) || str_len == n)
+	if (!s1 || !s2)
 		return (0);
-	else
-		return ((unsigned char)*(s1 + str_len)
-			- (unsigned char)*(s2 + str_len));
+	sjoin_len = ft_strlen(s1);
+	sjoin_len += ft_strlen(s2) + 1;
+	sjoin = malloc (sjoin_len);
+	if (!sjoin)
+		return (0);
+	ft_bzero(sjoin, sjoin_len);
+	ft_strlcat(sjoin, s1, sjoin_len);
+	ft_strlcat(sjoin, s2, sjoin_len);
+	return (sjoin);
 }

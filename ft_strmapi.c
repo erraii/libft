@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 16:28:16 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/19 18:32:37 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/22 11:40:05 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/22 13:56:26 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	str_len;
+	unsigned int	src_len;
+	char			*ret;
 
-	str_len = 0;
-	while (*(s1 + str_len) && *(s2 + str_len) && ((*(s1 + str_len) - *(s2
-					+ str_len)) == 0) && (str_len < (n - 1)))
-		str_len++;
-	if ((*(s1 + str_len) == *(s2 + str_len)) || (n == 0) || str_len == n)
+	if (!s)
 		return (0);
-	else
-		return ((unsigned char)*(s1 + str_len)
-			- (unsigned char)*(s2 + str_len));
+	src_len = ft_strlen(s);
+	ret = malloc((src_len + 1) * sizeof(char));
+	if (!ret)
+		return (0);
+	ret[src_len] = '\0';
+	while (src_len-- >= 0)
+	{
+		ret[src_len] = f(src_len, s[src_len]);
+		if (src_len == 0)
+			break ;
+	}
+	return (ret);
 }

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 16:28:16 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/19 18:32:37 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/22 16:35:42 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/22 17:04:05 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	str_len;
+	t_list	*new_list;
 
-	str_len = 0;
-	while (*(s1 + str_len) && *(s2 + str_len) && ((*(s1 + str_len) - *(s2
-					+ str_len)) == 0) && (str_len < (n - 1)))
-		str_len++;
-	if ((*(s1 + str_len) == *(s2 + str_len)) || (n == 0) || str_len == n)
+	new_list = malloc(sizeof(t_list));
+	if (!new_list)
 		return (0);
-	else
-		return ((unsigned char)*(s1 + str_len)
-			- (unsigned char)*(s2 + str_len));
+	new_list->content = content;
+	new_list->next = 0;
+	return (new_list);
 }

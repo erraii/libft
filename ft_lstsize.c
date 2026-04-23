@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 16:28:16 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/19 18:32:37 by ecakiray         ###   ########.fr       */
+/*   Created: 2026/04/22 18:25:57 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/22 18:35:50 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	str_len;
+	int	size;
 
-	str_len = 0;
-	while (*(s1 + str_len) && *(s2 + str_len) && ((*(s1 + str_len) - *(s2
-					+ str_len)) == 0) && (str_len < (n - 1)))
-		str_len++;
-	if ((*(s1 + str_len) == *(s2 + str_len)) || (n == 0) || str_len == n)
-		return (0);
-	else
-		return ((unsigned char)*(s1 + str_len)
-			- (unsigned char)*(s2 + str_len));
+	size = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
 }
