@@ -132,3 +132,5 @@ The project was tested using:
 - libft-unit-test by alelievr: https://github.com/alelievr/libft-unit-test
 
 It forms the basis for many future projects within the 42 curriculum.
+
+Made by ecakiray: ecakiray@student.42heilbronn.de | LinkedIn: [ecakiray](https://www.linkedin.com/in/eraycakiray/)
