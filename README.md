@@ -58,13 +58,33 @@ gcc your_file.c -L. -lft
 
 ### Libc Functions
 Reimplementations of standard C library functions such as:
+#### For chars:
+- `ft_isalpha`
+- `ft_isdigit`
+- `ft_isalnum`
+- `ft_isascii`
+- `ft_isprint`
+#### For strings:
 - `ft_strlen`
 - `ft_strcpy`
+- `ft_strlcat`
+- `ft_strchr`
+- `ft_strrchr`
+- `ft_strncmp`
+- `ft_strnstr`
+- `ft_toupper`
+- `ft_tolower`
+#### For memory:
 - `ft_memset`
 - `ft_bzero`
 - `ft_memcpy`
+- `ft_calloc`
 - `ft_memmove`
-
+- `ft_memchr`
+- `ft_memcmp`
+- `ft_strdup`
+#### For numbers:
+- `ft_atoi`
 These functions mimic the behavior of their standard counterparts.
 
 ### Additional Functions
