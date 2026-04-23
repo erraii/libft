@@ -87,9 +87,6 @@ Implementation of a singly linked list structure and related operations:
 - `ft_lstiter`
 - `ft_lstmap`
 
-#### ft_lstmap
-The function `ft_lstmap` creates a new list by applying a function `f` to each element of an existing list. If memory allocation fails, it uses a function `del` to free previously allocated elements, preventing memory leaks.
-
 Prototype:
 
 ```c
