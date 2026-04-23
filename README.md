@@ -120,10 +120,9 @@ Implementation of a singly linked list structure and related operations:
 
 ### Documentation & References
 - man pages
-- cs50.ai
 
 ### AI Usage
-AI tools such as ChatGPT were used in this project for:
+AI tools such as cs50.ai were used in this project for:
 - Clarifying function behavior and edge cases
 - Debugging segmentation faults and memory leaks
 - Improving code readability and documentation
