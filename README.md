@@ -87,12 +87,6 @@ Implementation of a singly linked list structure and related operations:
 - `ft_lstiter`
 - `ft_lstmap`
 
-Prototype:
-
-```c
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-```
-
 ## Resources
 
 ### Documentation & References
