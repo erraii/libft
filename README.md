@@ -85,6 +85,7 @@ Reimplementations of standard C library functions such as:
 - `ft_strdup`
 #### For numbers:
 - `ft_atoi`
+
 These functions mimic the behavior of their standard counterparts.
 
 ### Additional Functions
@@ -94,6 +95,12 @@ Custom utility functions including:
 - `ft_split`
 - `ft_itoa`
 - `ft_strtrim`
+- `ft_strmapi`
+- `ft_striteri`
+- `ft_putchar_fd`
+- `ft_putstr_fd`
+- `ft_putendl_fd`
+- `ft_putnbr_fd`
 
 These provide extended functionality for string and memory operations.
 
@@ -101,6 +108,8 @@ These provide extended functionality for string and memory operations.
 Implementation of a singly linked list structure and related operations:
 - `ft_lstnew`
 - `ft_lstadd_front`
+- `ft_lstsize`
+- `ft_lstlast`
 - `ft_lstadd_back`
 - `ft_lstdelone`
 - `ft_lstclear`
