@@ -10,8 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/23 10:15:02 by ecakiray          #+#    #+#             */
+/*   Updated: 2026/04/24 11:27:23 by ecakiray         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
+
+int	ft_del_if_need(t_list *node, t_list *list, void *cont, void (*del)(void *))
+{
+	if (!node)
+	{
+		del(cont);
+		ft_lstclear(&list, del);
+		return (0);
+	}
+	return (1);
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -21,20 +44,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	void	*new_content;
 
 	if (!f || !del)
-		return (NULL);
-	new_list = NULL;
-	last = NULL;
+		return (0);
+	new_list = 0;
+	last = 0;
 	while (lst)
 	{
 		new_content = f(lst->content);
 		new_node = ft_lstnew(new_content);
-		if (!new_node)
-		{
-			del(new_content);
-			ft_lstclear(&new_list, del);
-			return (NULL);
-		}
-		if (new_list == NULL)
+		if (!ft_del_if_need(new_node, new_list, new_content, del))
+			return (0);
+		if (new_list == 0)
 			new_list = new_node;
 		else
 			last->next = new_node;
