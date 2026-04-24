@@ -90,13 +90,16 @@ These functions mimic the behavior of their standard counterparts.
 
 ### Additional Functions
 Custom utility functions including:
+#### For strings & memory:
 - `ft_substr`
 - `ft_strjoin`
 - `ft_split`
-- `ft_itoa`
 - `ft_strtrim`
 - `ft_strmapi`
 - `ft_striteri`
+#### For numbers:
+- `ft_itoa`
+#### For files:
 - `ft_putchar_fd`
 - `ft_putstr_fd`
 - `ft_putendl_fd`
@@ -119,7 +122,12 @@ Implementation of a singly linked list structure and related operations:
 ## Resources
 
 ### Documentation & References
-- man pages
+- man *func name*
+- https://man7.org/linux/man-pages/
+- https://makefiletutorial.com/
+- https://web.mit.edu/gnu/doc/html/make_3.html
+- https://www.markdownguide.org/
+- https://github.com/RichardLitt/standard-readme
 
 ### AI Usage
 AI tools such as cs50.ai were used in this project for:
@@ -132,5 +140,7 @@ The project was tested using:
 - libft-unit-test by alelievr: https://github.com/alelievr/libft-unit-test
 
 It forms the basis for many future projects within the 42 curriculum.
+
+Special thanks to my all 42 Heilbronn colleagues.
 
 Made by ecakiray: ecakiray@student.42heilbronn.de | LinkedIn: [ecakiray](https://www.linkedin.com/in/eraycakiray/)
