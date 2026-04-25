@@ -6,11 +6,11 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 18:28:30 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/18 15:36:03 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:20:16 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_begin(char *str, int *sign, int *i)
+static int	check_begin(char *str, int *sign, int *i)
 {
 	while ((str[*i] == ' ') || str[*i] == '\n' || str[*i] == '\t'
 		|| str[*i] == '\r' || str[*i] == '\f' || str[*i] == '\v')

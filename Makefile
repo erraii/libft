@@ -6,7 +6,7 @@
 #    By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/15 14:44:59 by ecakiray          #+#    #+#              #
-#    Updated: 2026/04/25 13:01:12 by ecakiray         ###   ########.fr        #
+#    Updated: 2026/04/25 17:51:38 by ecakiray         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-#	gcc -nostartfiles -shared -o libft.so $(OBJS)
-	
