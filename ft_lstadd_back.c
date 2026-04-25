@@ -6,7 +6,7 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 18:44:01 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/22 21:45:18 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/25 23:08:08 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			if (!(current->next))
 			{
 				current->next = new;
-				new->next = 0;
+				return ;
 			}
 			current = current->next;
 		}
