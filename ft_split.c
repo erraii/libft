@@ -6,14 +6,14 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 16:24:08 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/21 18:48:47 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:22:19 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_count_words(char *s, char c)
+static int	ft_count_words(char *s, char c)
 {
 	char	prev_char;
 	int		count;
@@ -30,7 +30,7 @@ int	ft_count_words(char *s, char c)
 	return (count);
 }
 
-char	*ft_fill_each(char *s, char c)
+static char	*ft_fill_each(char *s, char c)
 {
 	int		len;
 	char	*word;
@@ -51,7 +51,7 @@ char	*ft_fill_each(char *s, char c)
 	return (word);
 }
 
-void	ft_fill_malloc(char **ret, char *s, char c)
+static void	ft_fill_malloc(char **ret, char *s, char c)
 {
 	int	i;
 	int	j;

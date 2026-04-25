@@ -6,26 +6,14 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 10:15:02 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/23 12:24:31 by ecakiray         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/23 10:15:02 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/24 11:27:23 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:23:21 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_del_if_need(t_list *node, t_list *list, void *cont, void (*del)(void *))
+static int	ft_del(t_list *node, t_list *list, void *cont, void (*del)(void *))
 {
 	if (!node)
 	{
@@ -51,7 +39,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		new_content = f(lst->content);
 		new_node = ft_lstnew(new_content);
-		if (!ft_del_if_need(new_node, new_list, new_content, del))
+		if (!ft_del(new_node, new_list, new_content, del))
 			return (0);
 		if (new_list == 0)
 			new_list = new_node;

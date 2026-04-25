@@ -6,14 +6,14 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:00:36 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/21 16:26:42 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:20:07 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	check_if_set(char c, char const *set)
+static int	check_if_set(char c, char const *set)
 {
 	size_t	i;
 

@@ -130,14 +130,14 @@ Implementation of a singly linked list structure and related operations:
 - https://github.com/RichardLitt/standard-readme
 
 ### AI Usage
-AI tools such as cs50.ai were used in this project for:
+AI tools such as cs50.ai and MS Copilot (no code mode) were used in this project for:
 - Clarifying function behavior and edge cases
 - Debugging segmentation faults and memory leaks
 - Improving code readability and documentation
 
 ### Testing
 The project was tested using:
-- libft-unit-test by alelievr: https://github.com/alelievr/libft-unit-test
+- libft-unit-test by francinette: https://github.com/xicodomingues/francinette
 
 It forms the basis for many future projects within the 42 curriculum.
 

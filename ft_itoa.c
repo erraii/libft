@@ -6,14 +6,14 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 18:51:59 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/21 20:37:12 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:21:18 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_count_digit(int nb, int *digit_num)
+static void	ft_count_digit(int nb, int *digit_num)
 {
 	long	long_nb;
 
@@ -28,7 +28,7 @@ void	ft_count_digit(int nb, int *digit_num)
 	(*digit_num)++;
 }
 
-void	ft_putdigit(long nb, char *s, int *size)
+static void	ft_putdigit(long nb, char *s, int *size)
 {
 	char	c;
 

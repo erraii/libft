@@ -6,7 +6,7 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 14:16:54 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/17 17:26:39 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/25 13:40:50 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_size;
 	size_t	src_size;
-	size_t	ret_size;
 
 	dst_size = 0;
 	while ((dst_size < size) && dst[dst_size])
@@ -30,6 +29,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	if (size > (dst_size + src_size))
 		dst[dst_size + src_size] = '\0';
-	ret_size = dst_size + src_size;
-	return (ret_size);
+	return (dst_size + src_size);
 }
+// int main()
+// {
+
+// }

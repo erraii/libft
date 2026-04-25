@@ -6,13 +6,13 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:37:39 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/17 17:27:17 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/24 12:35:13 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strnstr(const char *big,	const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t		big_len;
 	size_t		little_len;
