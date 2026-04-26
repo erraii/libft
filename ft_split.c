@@ -6,7 +6,7 @@
 /*   By: ecakiray <ecakiray@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 16:24:08 by ecakiray          #+#    #+#             */
-/*   Updated: 2026/04/24 12:22:19 by ecakiray         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:59:01 by ecakiray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,19 @@ static char	*ft_fill_each(char *s, char c)
 	return (word);
 }
 
-static void	ft_fill_malloc(char **ret, char *s, char c)
+static void	ft_free_the_words(char **ret, int index)
+{
+	int	i;
+
+	i = 0;
+	while (i < index)
+	{
+		free(ret[i]);
+		i++;
+	}
+}
+
+static int	ft_fill_malloc(char **ret, char *s, char c)
 {
 	int	i;
 	int	j;
@@ -65,12 +77,18 @@ static void	ft_fill_malloc(char **ret, char *s, char c)
 		if (s[i])
 		{
 			ret[j] = ft_fill_each(&s[i], c);
+			if (!ret[j])
+			{
+				ft_free_the_words(ret, j);
+				return (0);
+			}
 			j++;
 			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
 	ret[j] = 0;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -84,7 +102,11 @@ char	**ft_split(char const *s, char c)
 	ret = malloc((word_count + 1) * sizeof(char *));
 	if (!ret)
 		return (NULL);
-	ft_fill_malloc(ret, (char *)s, c);
+	if (!(ft_fill_malloc(ret, (char *)s, c)))
+	{
+		free(ret);
+		return (NULL);
+	}
 	ret[word_count] = NULL;
 	return (ret);
 }
